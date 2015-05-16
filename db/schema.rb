@@ -11,7 +11,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150516192339) do
+ActiveRecord::Schema.define(version: 20150516230952) do
+
+  create_table "recyclables", force: :cascade do |t|
+    t.integer  "user_id"
+    t.string   "recycle_type"
+    t.integer  "amount"
+    t.datetime "recycle_date"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "recyclables", ["user_id"], name: "index_recyclables_on_user_id"
 
   create_table "users", force: :cascade do |t|
     t.string   "name"
