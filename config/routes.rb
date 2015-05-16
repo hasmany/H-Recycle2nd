@@ -6,6 +6,9 @@ Rails.application.routes.draw do
   root 'static_pages#new'
 
   get 'signup' => 'users#new'
+  get 'login' => 'sessions#new'
+  post 'login' => 'sessions#create'
+  delete 'logout' => 'sessions#destroy'
   resources :users
 
   # You can have the root of your site routed with "root"
