@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   root 'static_pages#new'
 
   get 'signup' => 'users#new'
+  resources :users
 
   # You can have the root of your site routed with "root"
   # root 'welcome#index'
