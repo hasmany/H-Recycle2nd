@@ -161,21 +161,22 @@ jQuery(document).ready(function ($) {
                     $Orientation: 1                                 //[Optional] The orientation of the navigator, 1 horizontal, 2 vertical, default value is 1
                 }
             };
+            if (document.getElementById('slider1_container') !== null){
+                var jssor_slider1 = new $JssorSlider$("slider1_container", options);
+                //responsive code begin
+                //you can remove responsive code if you don't want the slider scales while window resizes
+                function ScaleSlider() {
+                    var parentWidth = jssor_slider1.$Elmt.parentNode.clientWidth;
+                    if (parentWidth)
+                        jssor_slider1.$ScaleWidth(Math.max(Math.min(parentWidth, 1930), 300));
+                    else
+                        window.setTimeout(ScaleSlider, 30);
+                }
+                ScaleSlider();
 
-            var jssor_slider1 = new $JssorSlider$("slider1_container", options);
-            //responsive code begin
-            //you can remove responsive code if you don't want the slider scales while window resizes
-            function ScaleSlider() {
-                var parentWidth = jssor_slider1.$Elmt.parentNode.clientWidth;
-                if (parentWidth)
-                    jssor_slider1.$ScaleWidth(Math.max(Math.min(parentWidth, 1930), 300));
-                else
-                    window.setTimeout(ScaleSlider, 30);
+                $(window).bind("load", ScaleSlider);
+                $(window).bind("resize", ScaleSlider);
+                $(window).bind("orientationchange", ScaleSlider);
             }
-            ScaleSlider();
-
-            $(window).bind("load", ScaleSlider);
-            $(window).bind("resize", ScaleSlider);
-            $(window).bind("orientationchange", ScaleSlider);
             //responsive code end
         });

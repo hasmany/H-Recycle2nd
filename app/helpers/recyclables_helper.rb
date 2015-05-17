@@ -1,0 +1,2 @@
+module RecyclablesHelper
+end

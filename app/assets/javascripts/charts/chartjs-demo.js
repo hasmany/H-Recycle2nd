@@ -137,43 +137,43 @@ $(function () {
     // var ctx = document.getElementById("polarChart").getContext("2d");
     // var myNewChart = new Chart(ctx).PolarArea(polarData, polarOptions);
 
-    // var doughnutData = [
-    //     {
-    //         value: 50,
-    //         color: "#a3e1d4",
-    //         highlight: "#1ab394",
-    //         label: "Paper"
-    //     },
-    //     {
-    //         value: 40,
-    //         color: "#23c6c8",
-    //         highlight: "#1ab394",
-    //         label: "Plastic"
-    //     },
-    //     {
-    //         value: 30,
-    //         color: "#1c84c6",
-    //         highlight: "#1ab394",
-    //         label: "Glass/Metal"
-    //     }
-    // ];
+    var doughnutData = [
+        {
+            value: 50,
+            color: "#a3e1d4",
+            highlight: "#1ab394",
+            label: "Paper"
+        },
+        {
+            value: 40,
+            color: "#23c6c8",
+            highlight: "#1ab394",
+            label: "Plastic"
+        },
+        {
+            value: 30,
+            color: "#1c84c6",
+            highlight: "#1ab394",
+            label: "Glass/Metal"
+        }
+    ];
 
-    // var doughnutOptions = {
-    //     segmentShowStroke: true,
-    //     segmentStrokeColor: "#fff",
-    //     segmentStrokeWidth: 2,
-    //     percentageInnerCutout: 45, // This is 0 for Pie charts
-    //     animationSteps: 100,
-    //     animationEasing: "easeOutBounce",
-    //     animateRotate: true,
-    //     animateScale: false,
-    //     responsive: true,
-    // };
+    var doughnutOptions = {
+        segmentShowStroke: true,
+        segmentStrokeColor: "#fff",
+        segmentStrokeWidth: 2,
+        percentageInnerCutout: 45, // This is 0 for Pie charts
+        animationSteps: 100,
+        animationEasing: "easeOutBounce",
+        animateRotate: true,
+        animateScale: false,
+        responsive: true,
+    };
 
 
-    // var ctx = document.getElementById("doughnutChart").getContext("2d");
-    // var myNewChart = new Chart(ctx).Doughnut(doughnutData, doughnutOptions);
-    // window.myDoughnutChart = myNewChart;
+    var ctx = document.getElementById("doughnutChart").getContext("2d");
+    var myNewChart = new Chart(ctx).Doughnut(doughnutData, doughnutOptions);
+    window.myDoughnutChart = myNewChart;
     // var radarData = {
     //     labels: ["Eating", "Drinking", "Sleeping", "Designing", "Coding", "Cycling", "Running"],
     //     datasets: [

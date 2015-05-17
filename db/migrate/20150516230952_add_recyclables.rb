@@ -4,7 +4,7 @@ class AddRecyclables < ActiveRecord::Migration
       t.references :user, index:true
       t.string :recycle_type
       t.integer :amount
-      t.datetime :recycle_date
+      t.date :recycle_date
       t.timestamps
     end
   end

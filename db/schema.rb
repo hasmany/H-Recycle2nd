@@ -17,7 +17,7 @@ ActiveRecord::Schema.define(version: 20150516230952) do
     t.integer  "user_id"
     t.string   "recycle_type"
     t.integer  "amount"
-    t.datetime "recycle_date"
+    t.date     "recycle_date"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

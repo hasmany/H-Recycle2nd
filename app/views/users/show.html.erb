@@ -5,6 +5,8 @@
           <div class="m-b-md">
           <h2 class="font-bold no-margins">
             <%= @user.name %>
+            <%sayHello(current_user[:id])%>
+            <%getPaper(current_user[:id])%>
           </h2>
             <small>DownTown</small>
           </div>
@@ -15,13 +17,13 @@
           <h4 class="media-heading text-center">Total Recycle Amount in lb(s)</h4>
           <div class="text-center">
               <div class="profile-button-layout">
-                <button type="button" class="btn btn-info m-r-sm">20</button>Paper
+                <button type="button" class="btn btn-info m-r-sm paperText"><%=getPaper(current_user[:id])%></button>Paper
               </div>
               <div class="profile-button-layout">
-                <button type="button" class="btn btn-plastic m-r-sm">28</button>Plastic
+                <button type="button" class="btn btn-plastic m-r-sm plasticText">28</button>Plastic
               </div>
               <div class="profile-button-layout">
-                <button type="button" class="btn btn-success m-r-sm">45</button>Glass/Metal
+                <button type="button" class="btn btn-success m-r-sm glassText">45</button>Glass/Metal
               </div>
           </div>
       </div>
@@ -69,7 +71,7 @@
       <div class="ibox-content">
         <div class="form-group" id="data_1">
           <div class="input-group date">
-              <span class="input-group-addon"><i class="fa fa-calendar"></i></span><input type="text" class="form-control" value="05/16/2015">
+              <span class="input-group-addon"><i class="fa fa-calendar"></i></span><input type="text" class="form-control recycle_date" value="05/16/2015">
           </div>
         </div>
       </div>
@@ -78,9 +80,9 @@
         <div ibox-tools></div>
       </div>
       <div class="ibox-content text-center">
-        <button class="btn btn-outline btn-success dim toolBoxButton" type="button"><i class="fa fa-recycle toolBoxIcon"></i></button>
-        <button class="btn btn-outline btn-warning dim toolBoxButton" type="button"><i class="fa fa-table toolBoxIcon"></i></button>
-        <button class="btn btn-outline btn-danger dim toolBoxButton" type="button"><i class="fa fa-remove toolBoxIcon"></i></button>
+        <button class="btn btn-outline btn-success dim toolBoxButton saveRecycle" type="button"><i class="fa fa-recycle toolBoxIcon"></i></button>
+        <button class="btn btn-outline btn-warning dim toolBoxButton showTable" type="button"><i class="fa fa-table toolBoxIcon"></i></button>
+        <button class="btn btn-outline btn-danger dim toolBoxButton clearInput" type="button"><i class="fa fa-remove toolBoxIcon"></i></button>
       </div>
     </div>
   </div>
