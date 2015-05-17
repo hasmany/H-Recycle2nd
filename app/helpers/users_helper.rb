@@ -1,35 +1,35 @@
 module UsersHelper
-  def sayHello(num)
-    puts "motherfucker!"
-    @user = User.find(num)
-    puts num
-  end
 
   def getPaper(num)
+    # Get user
     @user = User.find(num)
     # Get all recycles that are of type Paper
     paperList = @user.recyclables.select{ |recycle| recycle[:recycle_type] == 'Paper'}
     # Sum total amount and return
-    paperValue = paperList.map{|item| item[:amount]}.reduce(0,:+)
-    return paperValue
+
+    totalPaperValue = paperList.map{|item| item[:amount]}.reduce(0,:+)
+    return totalPaperValue
   end
 
   def getPlastic(num)
+    # Get user
     @user = User.find(num)
-    # Get all recycles that are of type Paper
-    paperList = @user.recyclables.select{ |recycle| recycle[:recycle_type] == 'Plastic'}
+    # Get all recycles that are of type Plastic
+    plasticList = @user.recyclables.select{ |recycle| recycle[:recycle_type] == 'Plastic'}
     # Sum total amount and return
-    paperValue = paperList.map{|item| item[:amount]}.reduce(0,:+)
-    return paperValue
+
+    totalPlasticValue = plasticList.map{|item| item[:amount]}.reduce(0,:+)
+    return totalPlasticValue
   end
 
   def getGlass(num)
+    # Get user
     @user = User.find(num)
-    # Get all recycles that are of type Paper
-    paperList = @user.recyclables.select{ |recycle| recycle[:recycle_type] == 'Paper'}
+    # Get all recycles that are of type Glass or metal
+    glassMetalList = @user.recyclables.select{ |recycle| recycle[:recycle_type] == 'Glass/Metal'}
     # Sum total amount and return
-    paperValue = paperList.map{|item| item[:amount]}.reduce(0,:+)
-    return paperValue
+    totalGlassMetalValue = glassMetalList.map{|item| item[:amount]}.reduce(0,:+)
+    return totalGlassMetalValue
   end
 
 end

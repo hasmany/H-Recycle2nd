@@ -5,8 +5,6 @@
           <div class="m-b-md">
           <h2 class="font-bold no-margins">
             <%= @user.name %>
-            <%sayHello(current_user[:id])%>
-            <%getPaper(current_user[:id])%>
           </h2>
             <small>DownTown</small>
           </div>
@@ -20,17 +18,27 @@
                 <button type="button" class="btn btn-info m-r-sm paperText"><%=getPaper(current_user[:id])%></button>Paper
               </div>
               <div class="profile-button-layout">
-                <button type="button" class="btn btn-plastic m-r-sm plasticText">28</button>Plastic
+                <button type="button" class="btn btn-plastic m-r-sm plasticText"><%=getPlastic(current_user[:id])%></button>Plastic
               </div>
               <div class="profile-button-layout">
-                <button type="button" class="btn btn-success m-r-sm glassText">45</button>Glass/Metal
+                <button type="button" class="btn btn-success m-r-sm glassText"><%=getGlass(current_user[:id])%></button>Glass/Metal
               </div>
           </div>
       </div>
       <div class="ibox float-e-margins">
         <div class="ibox-title">
-          <h5 class="text-center">Pie Chart </h5>
-
+          <h5 class="text-center hidden-xs">Pie Chart </h5>
+            <div class="text-center visible-xs">
+                <div class="profile-button-layout">
+                  <button type="button" class="btn btn-info m-r-sm paperText"><span><%=getPaper(current_user[:id])%></span></button>Paper
+                </div>
+                <div class="profile-button-layout">
+                  <button type="button" class="btn btn-plastic m-r-sm plasticText"><span><%=getPlastic(current_user[:id])%></span></button>Plastic
+                </div>
+                <div class="profile-button-layout">
+                  <button type="button" class="btn btn-success m-r-sm glassText"><span><%=getGlass(current_user[:id])%></span></button>Glass/Metal
+                </div>
+            </div>
           <div ibox-tools></div>
         </div>
           <div class="ibox-content">
