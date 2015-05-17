@@ -61,9 +61,29 @@ $(document).ready(function(){
   });
   $('.showTable').on('click', function(){
     console.log('show table');
+    var table = document.querySelector('.table tbody');
+    $('.table tbody').empty();
     $.ajax('/recyclables',{
       type: "GET",
       success: function(data) {
+        for (var i = 0, iLen = data.length; i < iLen; i++) {
+          var tableRow = document.createElement('tr');
+
+          var dateData = document.createElement('td');
+          dateData.appendChild(document.createTextNode(data[i].recycle_date));
+
+          var typeData = document.createElement('td');
+          typeData.appendChild(document.createTextNode(data[i].recycle_type));
+
+          var amountData = document.createElement('td');
+          amountData.appendChild(document.createTextNode(data[i].amount));
+
+          tableRow.appendChild(dateData);
+          tableRow.appendChild(typeData);
+          tableRow.appendChild(amountData);
+          table.appendChild(tableRow);
+        }
+        $('#myModal').modal();
         console.log('called index');
         console.log(data);
       }

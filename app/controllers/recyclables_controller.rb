@@ -1,7 +1,7 @@
 class RecyclablesController < ApplicationController
 
   def index
-    debugger
+
     # @user = User.find(num)
     # recycleList = @user.recyclables
     # return recycleList
