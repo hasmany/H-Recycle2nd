@@ -1,5 +1,6 @@
 module UsersHelper
 
+
   def getPaper(num)
     # Get user
     @user = User.find(num)

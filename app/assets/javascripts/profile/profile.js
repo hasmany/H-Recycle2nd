@@ -59,4 +59,23 @@ $(document).ready(function(){
 
 
   });
+  $('.showTable').on('click', function(){
+    console.log('show table');
+    $.ajax('/recyclables',{
+      type: "GET",
+      success: function(data) {
+        console.log('called index');
+        console.log(data);
+      }
+    });
+  })
+  // $('.showTable').on('click', function(){
+  //   $.ajax('/recyclables',{
+  //     type: "GET",
+  //     data: user_id: document.location.pathname.split('/')[2],
+  //     success: function(data) {
+  //       console.log('called index');
+  //     }
+  //   })
+  // })
 });

@@ -1,4 +1,17 @@
 class RecyclablesController < ApplicationController
+
+  def index
+    debugger
+    # @user = User.find(num)
+    # recycleList = @user.recyclables
+    # return recycleList
+    puts 'hello'
+    @recyclables = Recyclable.all
+    respond_to do |format|
+      format.json {render json: @recyclables}
+    end
+  end
+
   def create
 
     @recyclable = Recyclable.new(recyclable_params)
