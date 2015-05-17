@@ -14,7 +14,7 @@ $(document).ready(function(){
       },
   // On success
       success: function(data) {
-        // Set doughnutChart value by type
+        // Set doughnutChart and text value by type
         if (data.recycle_type === "Paper") {
           myDoughnutChart.segments[0].value += data.amount;
           $('.paperText span').fadeOut(1000, function() {
